@@ -1,6 +1,7 @@
 package com.br.fiap.enterprisechallenge.application;
 
 import java.util.List;
+import java.util.Scanner;
 
 import com.br.fiap.enterprisechallenge.model.dao.DaoFactory;
 import com.br.fiap.enterprisechallenge.model.dao.PessoaDao;
@@ -10,6 +11,8 @@ import com.br.fiap.enterprisechallenge.model.entites.Pessoa;
 public class Program {
 
 	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
 		
 		PessoaDao pessoaDao = DaoFactory.createPessoaDao();
 		
@@ -41,6 +44,12 @@ public class Program {
 		pessoaDao.update(pessoa);
 		System.out.println("Update completed");
 		
+		System.out.println("\n==== TEST 6: pessoa delete ====");
+		System.out.println("Enter id for delete test: ");
+		int id = sc.nextInt();
+		pessoaDao.deleteById(id);
+		System.out.println("Delete completed");
 		
+		sc.close();
 	}
 }
