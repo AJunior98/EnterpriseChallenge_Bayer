@@ -6,6 +6,7 @@ public class Doença {
 
 	private Integer id;
 	private String regiao;
+	private String mes;
 	private String nome;
 	
 	public Doença() {
@@ -39,6 +40,14 @@ public class Doença {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getMes() {
+		return mes;
+	}
+
+	public void setMes(String mes) {
+		this.mes = mes;
 	}
 
 	@Override
