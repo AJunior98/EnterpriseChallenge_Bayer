@@ -1,4 +1,4 @@
-package com.br.fiap.enterprisechallenge.entites;
+package com.br.fiap.enterprisechallenge.model.entites;
 
 import java.io.Serializable;
 import java.util.Objects;

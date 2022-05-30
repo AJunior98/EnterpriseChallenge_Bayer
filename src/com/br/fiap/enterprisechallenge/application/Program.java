@@ -1,6 +1,6 @@
 package com.br.fiap.enterprisechallenge.application;
 
-import com.br.fiap.enterprisechallenge.entites.Doenca;
+import com.br.fiap.enterprisechallenge.model.entites.Doenca;
 
 public class Program {
 
