@@ -12,13 +12,18 @@ public class Pessoa implements Serializable{
 	private String genero;
 	private Integer idade;
 	
+	private Doenca doenca;
+	
 	public Pessoa() {
 	}
 
-	public Pessoa(Integer id, String genero, Integer idade) {
+	public Pessoa(Integer id, String regiao, String mes, String genero, Integer idade, Doenca doenca) {
 		this.id = id;
+		this.regiao = regiao;
+		this.mes = mes;
 		this.genero = genero;
 		this.idade = idade;
+		this.doenca = doenca;
 	}
 
 	public Integer getId() {
@@ -60,6 +65,14 @@ public class Pessoa implements Serializable{
 	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
+	
+	public Doenca getDoenca() {
+		return doenca;
+	}
+
+	public void setDoenca(Doenca doenca) {
+		this.doenca = doenca;
+	}
 
 	@Override
 	public int hashCode() {
@@ -81,7 +94,7 @@ public class Pessoa implements Serializable{
 	@Override
 	public String toString() {
 		return "Pessoa [id=" + id + ", regiao=" + regiao + ", mes=" + mes + ", genero=" + genero + ", idade=" + idade
-				+ "]";
+				+ ", doenca=" + doenca + "]";
 	}
 
 }

@@ -1,17 +1,19 @@
 package com.br.fiap.enterprisechallenge.application;
 
-import com.br.fiap.enterprisechallenge.model.entites.Doenca;
+import com.br.fiap.enterprisechallenge.model.dao.DaoFactory;
+import com.br.fiap.enterprisechallenge.model.dao.PessoaDao;
+import com.br.fiap.enterprisechallenge.model.entites.Pessoa;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-//		Connection conn = DB.getConnection();
-//		DB.closeConnection();
+	
+		PessoaDao pessoaDao = DaoFactory.createPessoaDao();
 		
-		Doenca dc = new Doenca(1, "sudeste","fevereiro", "zika");
+		Pessoa pessoa = pessoaDao.findById(3);
 		
-		System.out.println(dc);
+		System.out.println(pessoa);
 		
 	}
 }
