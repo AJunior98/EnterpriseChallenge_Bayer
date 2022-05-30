@@ -66,8 +66,29 @@ public class PessoaDaoJDBC implements PessoaDao {
 
 	@Override
 	public void update(Pessoa obj) {
-		// TODO Auto-generated method stub
-		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement(
+					"UPDATE tb_pessoa " 
+					+ "SET Mes = ?, Regiao = ?, Genero = ?, Idade = ?, DoencaId = ? "
+					+ "WHERE Id = ?");
+			
+			st.setString(1, obj.getMes());
+			st.setString(2, obj.getRegiao());
+			st.setString(3, obj.getGenero());
+			st.setInt(4, obj.getIdade());
+			st.setInt(5, obj.getDoenca().getId());
+			st.setInt(6, obj.getId());
+			
+			st.executeUpdate();
+			
+		}
+		catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		} 
+		finally {
+			DB.closeStatement(st);
+		}
 	}
 
 	@Override

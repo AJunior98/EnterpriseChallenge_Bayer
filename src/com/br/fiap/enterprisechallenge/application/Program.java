@@ -35,5 +35,12 @@ public class Program {
 		pessoaDao.insert(newPessoa);
 		System.out.println("Inserted! New id = " + newPessoa.getId());
 		
+		System.out.println("\n==== TEST 5: pessoa update ====");
+		pessoa = pessoaDao.findById(1);
+		pessoa.setRegiao("Norte");
+		pessoaDao.update(pessoa);
+		System.out.println("Update completed");
+		
+		
 	}
 }
