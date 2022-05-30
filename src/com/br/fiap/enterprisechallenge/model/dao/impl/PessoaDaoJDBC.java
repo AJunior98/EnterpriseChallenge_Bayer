@@ -52,16 +52,8 @@ public class PessoaDaoJDBC implements PessoaDao {
 			st.setInt(1, id);
 			rs = st.executeQuery();
 			if (rs.next()) {
-				Doenca dc = new Doenca();
-				dc.setId(rs.getInt("DoencaId"));
-				dc.setNome(rs.getString("doencaName"));
-				Pessoa obj = new Pessoa();
-				obj.setId(rs.getInt("Id"));
-				obj.setRegiao(rs.getString("Regiao"));
-				obj.setMes(rs.getString("Mes"));
-				obj.setGenero(rs.getString("Genero"));
-				obj.setIdade(rs.getInt("Idade"));
-				obj.setDoenca(dc);
+				Doenca dc = instantiateDoenca(rs);
+				Pessoa obj = instantiatePessoa(rs, dc);
 				return obj;
 			}
 			return null;
@@ -73,6 +65,24 @@ public class PessoaDaoJDBC implements PessoaDao {
 			DB.closeStatement(st);
 			DB.closeResultSet(rs);
 		}
+	}
+
+	private Pessoa instantiatePessoa(ResultSet rs, Doenca dc) throws SQLException {
+		Pessoa obj = new Pessoa();
+		obj.setId(rs.getInt("Id"));
+		obj.setRegiao(rs.getString("Regiao"));
+		obj.setMes(rs.getString("Mes"));
+		obj.setGenero(rs.getString("Genero"));
+		obj.setIdade(rs.getInt("Idade"));
+		obj.setDoenca(dc);
+		return obj;
+	}
+
+	private Doenca instantiateDoenca(ResultSet rs) throws SQLException {
+		Doenca dc = new Doenca();
+		dc.setId(rs.getInt("DoencaId"));
+		dc.setNome(rs.getString("doencaName"));
+		return dc;
 	}
 
 	@Override

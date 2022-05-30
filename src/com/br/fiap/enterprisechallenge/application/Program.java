@@ -8,9 +8,9 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-	
 		PessoaDao pessoaDao = DaoFactory.createPessoaDao();
 		
+		System.out.println("==== TEST 1: pessoa findByID ====");
 		Pessoa pessoa = pessoaDao.findById(3);
 		
 		System.out.println(pessoa);
