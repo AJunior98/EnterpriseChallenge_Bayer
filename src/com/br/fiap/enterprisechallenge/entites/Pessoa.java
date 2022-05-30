@@ -1,8 +1,10 @@
 package com.br.fiap.enterprisechallenge.entites;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Pessoa {
+public class Pessoa implements Serializable{
+	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String genero;
@@ -48,6 +50,11 @@ public class Pessoa {
 			return false;
 		Pessoa other = (Pessoa) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [id=" + id + ", genero=" + genero + ", idade=" + idade + "]";
 	}
 	
 }

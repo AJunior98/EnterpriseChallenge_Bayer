@@ -1,20 +1,23 @@
 package com.br.fiap.enterprisechallenge.entites;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Doença {
+public class Doenca implements Serializable{
+	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	private String regiao;
 	private String mes;
 	private String nome;
 	
-	public Doença() {
+	public Doenca() {
 	}
 
-	public Doença(Integer id, String regiao, String nome) {
+	public Doenca(Integer id, String regiao, String mes, String nome) {
 		this.id = id;
 		this.regiao = regiao;
+		this.mes = mes;
 		this.nome = nome;
 	}
 
@@ -63,8 +66,13 @@ public class Doença {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Doença other = (Doença) obj;
+		Doenca other = (Doenca) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "Doença [id=" + id + ", regiao=" + regiao + ", mes=" + mes + ", nome=" + nome + "]";
 	}
 
 }
