@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,8 +26,42 @@ public class PessoaDaoJDBC implements PessoaDao {
 	
 	@Override
 	public void insert(Pessoa obj) {
-		// TODO Auto-generated method stub
-		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement(
+					"INSERT INTO tb_pessoa " 
+					+ "(Mes, Regiao, Genero, Idade, DoencaId) "
+					+ "VALUES "
+					+ "(?,?,?,?,?)", 
+					Statement.RETURN_GENERATED_KEYS);
+			
+			st.setString(1, obj.getMes());
+			st.setString(2, obj.getRegiao());
+			st.setString(3, obj.getGenero());
+			st.setInt(4, obj.getIdade());
+			st.setInt(5, obj.getDoenca().getId());
+			
+			int rowsAffected = st.executeUpdate();
+			
+			if (rowsAffected > 0) {
+				ResultSet rs = st.getGeneratedKeys();
+				if(rs.next()) {
+					int id = rs.getInt(1);
+					obj.setId(id);
+				}
+				DB.closeResultSet(rs);
+			}
+			else {
+				throw new DbException("Unexpected error! No rows affected.");
+			}
+
+		}
+		catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		} 
+		finally {
+			DB.closeStatement(st);
+		}
 	}
 
 	@Override

@@ -30,5 +30,10 @@ public class Program {
 			System.out.println(obj);
 		}
 		
+		System.out.println("\n==== TEST 4: pessoa insert ====");
+		Pessoa newPessoa = new Pessoa(null, "Janeiro", "Sul", "Feminino", 40, doenca);
+		pessoaDao.insert(newPessoa);
+		System.out.println("Inserted! New id = " + newPessoa.getId());
+		
 	}
 }
