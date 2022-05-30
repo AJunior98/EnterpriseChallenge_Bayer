@@ -7,6 +7,8 @@ public class Pessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	private String regiao;
+	private String mes;
 	private String genero;
 	private Integer idade;
 	
@@ -17,6 +19,30 @@ public class Pessoa implements Serializable{
 		this.id = id;
 		this.genero = genero;
 		this.idade = idade;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getRegiao() {
+		return regiao;
+	}
+
+	public void setRegiao(String regiao) {
+		this.regiao = regiao;
+	}
+
+	public String getMes() {
+		return mes;
+	}
+
+	public void setMes(String mes) {
+		this.mes = mes;
 	}
 
 	public String getGenero() {
@@ -54,7 +80,8 @@ public class Pessoa implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", genero=" + genero + ", idade=" + idade + "]";
+		return "Pessoa [id=" + id + ", regiao=" + regiao + ", mes=" + mes + ", genero=" + genero + ", idade=" + idade
+				+ "]";
 	}
-	
+
 }

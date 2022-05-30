@@ -7,8 +7,6 @@ public class Doenca implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
-	private String regiao;
-	private String mes;
 	private String nome;
 	
 	public Doenca() {
@@ -16,8 +14,6 @@ public class Doenca implements Serializable{
 
 	public Doenca(Integer id, String regiao, String mes, String nome) {
 		this.id = id;
-		this.regiao = regiao;
-		this.mes = mes;
 		this.nome = nome;
 	}
 
@@ -29,28 +25,12 @@ public class Doenca implements Serializable{
 		this.id = id;
 	}
 
-	public String getRegiao() {
-		return regiao;
-	}
-
-	public void setRegiao(String regiao) {
-		this.regiao = regiao;
-	}
-
 	public String getNome() {
 		return nome;
 	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	
-	public String getMes() {
-		return mes;
-	}
-
-	public void setMes(String mes) {
-		this.mes = mes;
 	}
 
 	@Override
@@ -72,7 +52,7 @@ public class Doenca implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Doença [id=" + id + ", regiao=" + regiao + ", mes=" + mes + ", nome=" + nome + "]";
+		return "Doenca [id=" + id + ", nome=" + nome + "]";
 	}
 
 }
