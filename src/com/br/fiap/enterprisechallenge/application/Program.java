@@ -24,7 +24,11 @@ public class Program {
 		for(Pessoa obj : list) {
 			System.out.println(obj);
 		}
-
+		System.out.println("\n==== TEST 3: pessoa findAll ====");
+		list = pessoaDao.findAll();
+		for(Pessoa obj : list) {
+			System.out.println(obj);
+		}
 		
 	}
 }

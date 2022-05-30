@@ -90,8 +90,41 @@ public class PessoaDaoJDBC implements PessoaDao {
 
 	@Override
 	public List<Pessoa> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement(
+					"SELECT tb_pessoa.*, tb_doenca.Tipo as doencaName "
+					+ "FROM tb_pessoa INNER JOIN tb_doenca "
+					+ "ON tb_pessoa.DoencaId = tb_doenca.Id "
+					+ "ORDER BY Id");
+					
+			rs = st.executeQuery();
+			
+			List<Pessoa> list = new ArrayList<>();
+			Map<Integer, Doenca> map = new HashMap<>();
+			
+			while (rs.next()) {
+				
+				Doenca dc = map.get(rs.getInt("DoencaId"));
+				
+				if (dc == null) {
+					dc = instantiateDoenca(rs);
+					map.put(rs.getInt("DoencaId"), dc);
+				}
+				
+				Pessoa obj = instantiatePessoa(rs, dc);
+				list.add(obj);
+			}
+			return list;
+		}
+		catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(st);
+			DB.closeResultSet(rs);
+		}
 	}
 
 	@Override
