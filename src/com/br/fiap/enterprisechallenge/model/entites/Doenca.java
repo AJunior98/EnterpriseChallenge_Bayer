@@ -12,7 +12,7 @@ public class Doenca implements Serializable{
 	public Doenca() {
 	}
 
-	public Doenca(Integer id, String regiao, String mes, String nome) {
+	public Doenca(Integer id, String nome) {
 		this.id = id;
 		this.nome = nome;
 	}
