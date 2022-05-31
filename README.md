@@ -564,11 +564,27 @@ O diagrama de classes é bem simples, a partir da base de dados coletada, pude d
 
 O sistema está dividido em pacotes, para auxiliar o entendimento, abaixo a explicação do conteudo de cada pacote:
 
-- com.br.fiap.enterprisechallenge.application: 
+## com.br.fiap.enterprisechallenge.application
+- Program: Teste das funcionalidades de CRUD da tb_pessoa
+- Program2: Teste das funcionalidades de CRUD da tb_doenca
 
-- com.br.fiap.enterprisechallenge.database
-DB -> 
+## com.br.fiap.enterprisechallenge.database
+- DB: Connection and close connection do Statement, ResultSet e DataBase.
+- DbException: Exceção do tipo RunTimeException para evitar de fazer tratamento da exceção SQLException.
+- DbIntegrityException: Exceção do tipo RunTimeException, lançada apenas para casos de violação de integridade.
 
+## com.br.fiap.enterprisechallenge.model.dao
+- DaoFactory: Classe auxiliar contendo operações estaticas responsável por instanciar os Daos, para não precisar expor a implementação, somente deixando exposta a interface.
+- DoencaDao: Interface contendo todos os paremetros utilizados pela implementação.
+- PessoaDao: Interface contendo todos os paremetros utilizados pela implementação.
+
+## com.br.fiap.enterprisechallenge.model.dao.impl
+- DoencaDaoJDBC: Classe contendo todas as implementações da interface DoencaDao.
+- PessoaDaoJDBC: Classe contendo todas as implementações da interface PessoaDao.
+
+## com.br.fiap.enterprisechallenge.model.entites
+- Doenca: Entidade doença contendo todos os atributos constituidos no diagrama de classes.
+- Pessoa: Entidade pessoa contendo todos os atributos constituidos no diagrama de classes.
 
 # 5 - Exemplo de três insights
 
