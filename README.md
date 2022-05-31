@@ -562,6 +562,12 @@ O diagrama de classes é bem simples, a partir da base de dados coletada, pude d
 
 # 4 - Persistencia dos dados
 
+O sistema está dividido em pacotes, para auxiliar o entendimento, abaixo a explicação do conteudo de cada pacote:
+
+- com.br.fiap.enterprisechallenge.application: 
+
+- com.br.fiap.enterprisechallenge.database
+DB -> 
 
 
 # 5 - Exemplo de três insights
