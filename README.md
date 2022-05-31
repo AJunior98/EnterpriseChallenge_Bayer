@@ -1,6 +1,6 @@
 # Descrição - EnterpriseChallenge_Bayer
 
-Deseja-se fazer um sistema para monitoramento da quantidade de casos de zika, malária e dengue no primeiro trimestre por região do Brasil (Norte, Nordeste, Centro-Oeste, Sudeste e Sul) para empresa Bayer.
+Sistema para monitoramento da quantidade de casos de zika, malária e dengue no primeiro trimestre por região do Brasil (Norte, Nordeste, Centro-Oeste, Sudeste e Sul) para empresa Bayer.
 
 # 1 - Modelagem de dados
 
