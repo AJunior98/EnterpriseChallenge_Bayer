@@ -17,7 +17,7 @@ use enterprisechallenge;
 -- Criação de tabela doença
 CREATE TABLE tb_doenca (
 	Id INT NOT NULL AUTO_INCREMENT,
-    Tipo VARCHAR(30),
+    	Tipo VARCHAR(30),
 	PRIMARY KEY (id)
 );
 
@@ -26,8 +26,8 @@ CREATE TABLE tb_pessoa (
 	Id INT NOT NULL AUTO_INCREMENT,
 	Regiao VARCHAR(30),
 	Mes VARCHAR(30),
-    Genero VARCHAR(10),
-    Idade INT(3),
+    	Genero VARCHAR(10),
+    	Idade INT(3),
 	DoencaId int(11) NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (DoencaId) REFERENCES tb_doenca (id)
@@ -548,12 +548,7 @@ SELECT * FROM tb_doenca;
 
 -- Consulta da tabela pessoa
 SELECT * FROM tb_pessoa;
-
-
-
-
 ```
-
 # 3 - Diagrama de classes
 
 O diagrama de classes é bem simples, a partir da base de dados coletada, pude definir que o sistema terá somente duas classes que se relacionam entre si. Abaixo uma imagem do diagrama:
