@@ -26,8 +26,8 @@ public class DoencaDaoJDBC implements DoencaDao {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement(
-					"INSERT INTO tb_doenca " 
-					+ "(Tipo) "
+					"INSERT INTO T_MNT_DOENCA " 
+					+ "(tp_doenca) "
 					+ "VALUES "
 					+ "(?)", 
 					Statement.RETURN_GENERATED_KEYS);
@@ -62,9 +62,9 @@ public class DoencaDaoJDBC implements DoencaDao {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement(
-					"UPDATE tb_doenca " 
-					+ "SET Tipo = ? "
-					+ "WHERE Id = ?");
+					"UPDATE T_MNT_DOENCA " 
+					+ "SET tp_doenca = ? "
+					+ "WHERE id = ?");
 			
 			st.setString(1, obj.getNome());
 			st.setInt(2, obj.getId());
@@ -83,7 +83,7 @@ public class DoencaDaoJDBC implements DoencaDao {
 	public void deleteById(Integer id) {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("DELETE FROM tb_doenca WHERE Id = ?");
+			st = conn.prepareStatement("DELETE FROM T_MNT_DOENCA WHERE id = ?");
 			
 			st.setInt(1, id);
 			
@@ -104,8 +104,8 @@ public class DoencaDaoJDBC implements DoencaDao {
 		try {
 			st = conn.prepareStatement(
 					"SELECT * "
-					+ "FROM tb_doenca "
-					+ "where Id = ?");
+					+ "FROM T_MNT_DOENCA "
+					+ "where id = ?");
 					
 			st.setInt(1, id);
 			
@@ -128,8 +128,8 @@ public class DoencaDaoJDBC implements DoencaDao {
 
 	private Doenca instantiateDoenca(ResultSet rs) throws SQLException {
 		Doenca dc = new Doenca();
-		dc.setId(rs.getInt("Id"));
-		dc.setNome(rs.getString("Tipo"));
+		dc.setId(rs.getInt("id"));
+		dc.setNome(rs.getString("tp_doenca"));
 		return dc;
 	}
 
@@ -140,7 +140,7 @@ public class DoencaDaoJDBC implements DoencaDao {
 		try {
 			st = conn.prepareStatement(
 					"SELECT * "
-					+ "FROM tb_doenca");
+					+ "FROM T_MNT_DOENCA");
 					
 			rs = st.executeQuery();
 			

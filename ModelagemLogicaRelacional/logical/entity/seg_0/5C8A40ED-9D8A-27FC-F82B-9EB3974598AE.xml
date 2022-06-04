@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5C8A40ED-9D8A-27FC-F82B-9EB3974598AE" name="T_MNT_DOENCA">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 14:04:27 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<engineerTo>
+<item key="8AA22373-9A09-1E92-BC96-60308FE45E7D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="87D5E88B-CB1E-5079-A00E-37480ADA0EE7">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 14:04:33 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<engineerTo>
+<item key="8AA22373-9A09-1E92-BC96-60308FE45E7D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tp_doenca" id="F0CFA92B-C2EA-49E8-9723-8B42AFAC002A">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 14:04:48 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<engineerTo>
+<item key="8AA22373-9A09-1E92-BC96-60308FE45E7D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F190AE29-227C-DBB5-64D8-A4A8C5EBF4CF" name="T_MNT_DOENCA PK">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 14:04:46 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<engineerTo>
+<item key="8AA22373-9A09-1E92-BC96-60308FE45E7D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>87D5E88B-CB1E-5079-A00E-37480ADA0EE7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

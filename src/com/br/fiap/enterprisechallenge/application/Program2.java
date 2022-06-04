@@ -25,7 +25,7 @@ public class Program2 {
 		for(Doenca obj : list) {
 			System.out.println(obj);
 		}
-	
+
 		System.out.println("\n==== TEST 3: pessoa insert ====");
 		Doenca newDoenca = new Doenca(null, "Covid");
 		doencaDao.insert(newDoenca);

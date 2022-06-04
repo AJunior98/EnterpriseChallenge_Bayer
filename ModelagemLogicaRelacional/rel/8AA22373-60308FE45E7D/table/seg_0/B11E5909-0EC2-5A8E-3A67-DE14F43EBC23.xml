@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B11E5909-0EC2-5A8E-3A67-DE14F43EBC23" name="T_MNT_DOENCA">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 13:58:40 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="6A0F56F2-0FF3-AE3D-D207-423E29418279">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 13:58:59 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tp_doenca" id="583732FD-5F95-A8E8-8ED6-9870A57135FB">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 13:59:07 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="870CDFE2-8B92-1385-A953-B656B3B1238B" name="T_MNT_DOENCA_PK">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 13:58:59 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A0F56F2-0FF3-AE3D-D207-423E29418279"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

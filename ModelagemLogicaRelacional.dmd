@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ModelagemLogicaRelacional" id="D7E6645C-E3CB-1414-634C-19C3B79EF5A7" version="3.5">
+<createdBy>PiterWork</createdBy>
+<createdTime>2022-06-04 13:52:28 UTC</createdTime>
+<ownerDesignName>ModelagemLogicaRelacional</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>D7E6645C-E3CB-1414-634C-19C3B79EF5A7</designId>
+</OSDM_Design>

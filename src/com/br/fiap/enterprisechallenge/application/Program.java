@@ -34,15 +34,15 @@ public class Program {
 		}
 		
 		System.out.println("\n==== TEST 4: pessoa insert ====");
-		Pessoa newPessoa = new Pessoa(null, "Janeiro", "Sul", "Feminino", 40, doenca);
+		Pessoa newPessoa = new Pessoa(null,"26548946548" ,"Janeiro", "Sul", "Feminino", 40, doenca);
 		pessoaDao.insert(newPessoa);
 		System.out.println("Inserted! New id = " + newPessoa.getId());
 		
-//		System.out.println("\n==== TEST 5: pessoa update ====");
-//		pessoa = pessoaDao.findById(1);
-//		pessoa.setRegiao("Norte");
-//		pessoaDao.update(pessoa);
-//		System.out.println("Update completed");
+		System.out.println("\n==== TEST 5: pessoa update ====");
+		pessoa = pessoaDao.findById(482);
+		pessoa.setIdade(18);
+		pessoaDao.update(pessoa);
+		System.out.println("Update completed");
 		
 		System.out.println("\n==== TEST 6: pessoa delete ====");
 		System.out.println("Enter id for delete test: ");
