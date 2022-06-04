@@ -11,7 +11,7 @@ Sistema para monitoramento da quantidade de casos de zika, malária e dengue no 
 
 # 2 - Criação do modelo físico
 - Abaixo o script da modelagem gerada e utilizada no backend como amostra de dados.
-Script SQL
+
 ```sql
 -- Criando DataBase
 create database enterprisechallenge;
@@ -558,13 +558,20 @@ SELECT * FROM T_MNT_PESSOA;
 ```
 # 3 - Diagrama de classes
 
-O diagrama de classes é bem simples, a partir da base de dados coletada, pude definir que o sistema terá somente duas classes que se relacionam entre si. Abaixo uma imagem do diagrama:
+O diagrama de classes é bem simples, a partir da base de dados coletada, pude definir que o sistema terá somente duas classes que se relacionam entre si. 
+Abaixo uma imagem do diagrama de classes:
 
-![image](https://user-images.githubusercontent.com/100853329/171180813-5ac638dc-7c26-40bb-870e-f6b1e7ddd72c.png)
+![image](https://user-images.githubusercontent.com/100853329/172007034-7520ef99-f2d4-4687-ac36-846592399ee6.png)
 
-# 4 - Persistencia dos dados
+## Contextualização da imagem acima
+- Para cada entidade, haverá um objeto responsável por fazer acesso a dados relacionado a sua entidade. Por exemplo:
+	- Doenca: DoencaDao
+	- Pessoa: PessoaDao
+- Cada DAO será definido por uma interface.
+- A injeção de dependência foi pensada por meio do padrão de projeto Factory.
 
-O sistema está dividido em pacotes, para auxiliar o entendimento, abaixo a explicação do conteudo de cada pacote:
+# 4 - Persistência dos dados
+Como explicado no diagrama de classes acima, o projeto foi desenhado no padrão DAO, porém as classes DAO's são interfaces, que implementa a interface é a tecnologia responsável pela manipulação dos dados com o banco, que no caso é o JDBC.
 
 ## com.br.fiap.enterprisechallenge.application
 - Program: Teste das funcionalidades de CRUD da tb_pessoa
