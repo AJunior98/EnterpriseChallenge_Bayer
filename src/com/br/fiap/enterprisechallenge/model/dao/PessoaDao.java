@@ -9,8 +9,8 @@ public interface PessoaDao {
 
 	void insert(Pessoa obj);
 	void update(Pessoa obj);
-	void deleteById(Integer id);
-	Pessoa findById(Integer id);
+	void deleteByCpf(String id);
+	Pessoa findByCpf(String cpf);
 	List<Pessoa> findAll();
 	List<Pessoa> findByDoenca(Doenca doenca);
 	

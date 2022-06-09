@@ -103,8 +103,8 @@ public class Pessoa implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", cpf=" + cpf + ", regiao=" + regiao + ", mes=" + mes + ", genero=" + genero
-				+ ", idade=" + idade + ", doenca=" + doenca + "]";
+		return "[Regiao: " + mes + ", mes: " + regiao + ", genero: " + genero
+				+ ", idade: " + idade + ", doenca: " + doenca.getNome() + "]";
 	}
 
 }

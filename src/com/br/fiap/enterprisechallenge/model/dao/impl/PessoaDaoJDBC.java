@@ -13,6 +13,7 @@ import java.util.Map;
 import com.br.fiap.enterprisechallenge.database.DB;
 import com.br.fiap.enterprisechallenge.database.DbException;
 import com.br.fiap.enterprisechallenge.model.dao.PessoaDao;
+import com.br.fiap.enterprisechallenge.model.entites.Dados;
 import com.br.fiap.enterprisechallenge.model.entites.Doenca;
 import com.br.fiap.enterprisechallenge.model.entites.Pessoa;
 
@@ -64,7 +65,7 @@ public class PessoaDaoJDBC implements PessoaDao {
 			DB.closeStatement(st);
 		}
 	}
-
+	
 	@Override
 	public void update(Pessoa obj) {
 		PreparedStatement st = null;
@@ -83,8 +84,8 @@ public class PessoaDaoJDBC implements PessoaDao {
 			st.setInt(7, obj.getId());
 			
 			st.executeUpdate();
-			
 		}
+		
 		catch (SQLException e) {
 			throw new DbException(e.getMessage());
 		} 
@@ -94,12 +95,12 @@ public class PessoaDaoJDBC implements PessoaDao {
 	}
 
 	@Override
-	public void deleteById(Integer id) {
+	public void deleteByCpf(String cpf) {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("DELETE FROM T_MNT_PESSOA WHERE id = ?");
+			st = conn.prepareStatement("DELETE FROM T_MNT_PESSOA WHERE nr_cpf = ?");
 			
-			st.setInt(1, id);
+			st.setString(1, cpf);
 			
 			st.executeUpdate();
 		}
@@ -111,8 +112,10 @@ public class PessoaDaoJDBC implements PessoaDao {
 		}
 	}
 
+	
+	
 	@Override
-	public Pessoa findById(Integer id) {
+	public Pessoa findByCpf(String cpf) {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
@@ -120,9 +123,9 @@ public class PessoaDaoJDBC implements PessoaDao {
 					"SELECT T_MNT_PESSOA.*, T_MNT_DOENCA.tp_doenca as doencaName "
 					+ "FROM T_MNT_PESSOA INNER JOIN T_MNT_DOENCA "
 					+ "ON T_MNT_PESSOA.id_doenca = T_MNT_DOENCA.id "
-					+ "where T_MNT_PESSOA.id = ?");
-					
-			st.setInt(1, id);
+					+ "where T_MNT_PESSOA.nr_cpf = ?");
+			
+			st.setString(1, cpf);
 			rs = st.executeQuery();
 			if (rs.next()) {
 				Doenca dc = instantiateDoenca(rs);
@@ -139,7 +142,7 @@ public class PessoaDaoJDBC implements PessoaDao {
 			DB.closeResultSet(rs);
 		}
 	}
-
+	
 	private Pessoa instantiatePessoa(ResultSet rs, Doenca dc) throws SQLException {
 		Pessoa obj = new Pessoa();
 		obj.setId(rs.getInt("id"));
