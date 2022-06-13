@@ -587,7 +587,7 @@ Como explicado no diagrama de classes acima, o projeto foi desenhado no padrão 
 A partir de uma sugestão do professor, para o pitch, elaboramos uma classe com alguns menus onde poderiamos testar o CRUD e apresentar alguns insights:
 ![image](https://user-images.githubusercontent.com/100853329/173343828-c58d75c1-79cf-4872-94de-5a72c56aec73.png)
 
-Foram elaborados 1 insight chamado "Consulta pela quantidade de contagios por região" para demostrar a efiência do sistema, com isso, buscamos um pequeno relatorio no banco, abaixo mais detalhes:
+Foi elaborado 1 insight chamado "Consulta pela quantidade de contagios por região" para demostrar a efiência do sistema, com isso, buscamos um pequeno relatorio no banco, abaixo mais detalhes:
 
 - Selecionei a opção 4 - Consulta (da imagem anterior) -> Opção 2 - Quantidade de contagios por região -> Digitei uma região qualquer
 
