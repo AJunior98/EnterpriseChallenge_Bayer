@@ -115,6 +115,7 @@ public class Executavel {
 				Pessoa newPessoa = new Pessoa(null,cpf,mes, regiao, genero, idade, doenca);
 				pessoaDao.insert(newPessoa);
 				System.out.print("\t-- >Inserção realizada com sucesso!<--");
+				System.out.println();
 				break;
 
 			case 2:
@@ -132,6 +133,7 @@ public class Executavel {
 				Pessoa newPessoa2 = new Pessoa(null,cpf2,mes2, regiao2, genero2, idade2, doenca2);
 				pessoaDao.insert(newPessoa2);
 				System.out.print("\t-- >Inserção realizada com sucesso!<--");
+				System.out.println();
 				break;
 
 			case 3:
@@ -149,6 +151,7 @@ public class Executavel {
 				Pessoa newPessoa3 = new Pessoa(null,cpf3,mes3, regiao3, genero3, idade3, doenca3);
 				pessoaDao.insert(newPessoa3);
 				System.out.print("\t-- >Inserção realizada com sucesso!<--");
+				System.out.println();
 				break;
 
 			case 4:
@@ -169,6 +172,7 @@ public class Executavel {
 				Pessoa newPessoa4 = new Pessoa(null,cpf4,mes4, regiao4, genero4, idade4, doenca4);
 				pessoaDao.insert(newPessoa4);
 				System.out.print("\t-- >Inserção realizada com sucesso!<--");
+				System.out.println();
 				break;
 			case 5: 
 				menuMain();
