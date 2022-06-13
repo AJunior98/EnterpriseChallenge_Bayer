@@ -548,7 +548,7 @@ INSERT INTO T_MNT_PESSOA (nr_cpf, dt_mesContagio, nm_regiao, nm_genero, nr_idade
 O diagrama de classes é bem simples, a partir da base de dados coletada, pude definir que o sistema terá somente duas classes que se relacionam entre si. 
 Abaixo uma imagem do diagrama de classes:
 
-![image](https://user-images.githubusercontent.com/100853329/172007034-7520ef99-f2d4-4687-ac36-846592399ee6.png)
+![image](https://user-images.githubusercontent.com/100853329/173345076-3cba50b1-07ca-4e12-8100-1de181d713be.png)
 
 ## Contextualização da imagem acima
 - Para cada entidade, haverá um objeto responsável por fazer acesso a dados relacionado a sua entidade. Por exemplo:
